@@ -10,7 +10,7 @@ const client = createClient({
 
 //These remind me of lifecylce methods, seems to be apart of next js. get static paths, gets all recipes and then teturns a params object that contains slug for each
 export const getStaticPaths = async () =>{
-  const res = await client.getEntries({content_type:'recipe'})
+  const res = await client.getEntries({content_type:'blogPost'})
 
   const paths = res.items.map(item =>{
     return {
@@ -27,33 +27,26 @@ export const getStaticPaths = async () =>{
 // another lifecylce function, passes props to the component below
 export async function getStaticProps({ params }){
   const { items } = await client.getEntries({
-    content_type: 'recipe',
+    content_type: 'blogPost',
     'fields.slug': params.slug
   })
 
   return {
-    props: {recipe: items[0]},
+    props: {blogs: items[0]},
     revalidate: 1
   }
 }
 
 
-export default function RecipeDetails({recipe}) {
-  const {featuredImage, title, cookingTime, ingredients, method } = recipe.fields;
+export default function RecipeDetails({blogs}) {
+  const {featuredImage, title, body } = blogs.fields;
   return (
     <div>
       <div className={styles.banner}>
           <Image src={'https:' + featuredImage.fields.file.url} width={featuredImage.fields.file.details.image.width} height={featuredImage.fields.file.details.image.height}/>
       </div>
-      <div className={styles.info}>
-        <p>Takes about {cookingTime} min to cook.</p>
-        <h3>Ingredients:</h3>
-        {ingredients.map(ing => (
-          <span key={ing}>{ing}</span>
-        ))}
-      </div>
       <div className={styles.method}>
-        <h3>{documentToReactComponents(method)}</h3>
+        <h3>{documentToReactComponents(body)}</h3>
         
       </div>
     </div>
