@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "Proxima-Nova";
+    src: url("/fonts/Proxima-Nova-Font.otf");
+    font-weight: 900;
+  }
+
+  @font-face {
+    font-family: "Proxima-Nova-Bold";
+    src: url("/fonts/Proxima-Nova-Bold.otf");
+    font-weight: 900;
+  }
+
+  @font-face {
+    font-family: "Proxima-Nova-Thin";
+    src: url("/fonts/Proxima-Nova-Thin.otf");
+    font-weight: 900;
+  }
+
+  @font-face {
+    font-family: "AvenirNext";
+    src: url("/fonts/AvenirNextLTPro-Regular.otf");
+    font-weight: 900;
+  }
+
+  @font-face {
+    font-family: "AvenirNext-Bold";
+    src: url("/fonts/AvenirNextLTPro-Bold.otf");
+    font-weight: 900;
+  }
+
+  @font-face {
+    font-family: "AvenirNext-light";
+    src: url("/fonts/AvenirNextLTPro-lt.otf");
+    font-weight: 900;
+  }

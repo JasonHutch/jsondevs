@@ -1,5 +1,6 @@
 import {createClient} from 'contentful';
 import RecipieCard from '../components/RecipieCard';
+import HomepageHero from '../components/HomepageHero';
 import styles from '../styles/RecipeLayout.module.css';
 
 export async function getStaticProps(){
@@ -9,21 +10,21 @@ export async function getStaticProps(){
     accessToken: process.env.CONTENTFUL_ACCESS_KEY
   })
 
-  const res = await client.getEntries({ content_type: 'blogPost'})
+  const posts = await client.getEntries({ content_type: 'blogPost'})
+  const hero = await client.getEntries({ content_type: 'homepageHero'})
 
   return {
     props:{
-      posts: res.items,
+      posts: posts.items,
+      hero: hero.items[0]
     }
   }
 }
-export default function Recipes({posts}) {
-  console.log(posts);
+export default function Render ({hero}) {
+  console.log(hero);
   return (
-    <div className={styles.recipeList}>
-      {posts.map(post =>(
-        <RecipieCard key={post.sys.id} post={post}/>
-      ))}
+    <div>
+      <HomepageHero hero={hero} />
     </div>
   )
 }

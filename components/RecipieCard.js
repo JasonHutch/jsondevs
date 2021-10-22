@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from '../styles/RecipeCard.module.css'
 
+
 export default function RecipieCard({post}){
     const {title, slug, description, thumbnail} = post.fields
     return(
