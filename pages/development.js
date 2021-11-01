@@ -1,6 +1,8 @@
 import {createClient} from 'contentful';
+import { urlObjectKeys } from 'next/dist/next-server/lib/utils';
 import Image from 'next/image';
 import { useState } from 'react';
+import BlogGrid from '../components/BlogGrid';
 import DetailHero from '../components/DetailHero';
 import TopicFilter from '../components/TopicFilter';
 import TopicFilters from '../components/TopicFilter';
@@ -24,7 +26,9 @@ export async function getStaticProps(){
   }
 }
 
-export default function DevelopPage ({hero}) {
+
+
+export default function DevelopPage ({hero, posts}) {
   var [activeTopics, setActiveTopics] = useState([]);
 
   function updateTopicFilters(topicName){
@@ -39,6 +43,26 @@ export default function DevelopPage ({hero}) {
         }
   }
 
+  function groupBlogsByDate(blogs){
+    var groupedPosts = new Map();
+    blogs.forEach((blog) => {
+      var date = new Date(blog.fields.publishDate);
+      var blogYear = date.getFullYear()
+
+      if(groupedPosts.has(blogYear)){
+        var yearPosts = groupedPosts.get(blogYear);
+        yearPosts.push(blog);
+        groupedPosts.set(blogYear, yearPosts);
+      }else{
+        groupedPosts.set(blogYear, [blog])
+      }
+    });
+    return groupedPosts;
+  }
+
+  var groupedBlogs = groupBlogsByDate(posts);
+  var keyArray = [...groupedBlogs.keys()];
+
 
     return (
       <div className={styles.detailPageContainer}>
@@ -47,6 +71,11 @@ export default function DevelopPage ({hero}) {
             <TopicFilter topicName={"React"} callback={updateTopicFilters}/>
             <TopicFilter topicName={"DevOps"} callback={updateTopicFilters}/>
             <TopicFilter topicName={"Dev Culture"} callback={updateTopicFilters}/>
+        </div>
+        <div className={styles.blogsContainer}>
+          {keyArray.map((key)=>(
+            <BlogGrid year={key} blogs={groupedBlogs.get(key)}/>
+          ))}
         </div>
       </div>
     )

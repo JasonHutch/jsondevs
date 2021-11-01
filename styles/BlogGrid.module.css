@@ -1,0 +1,23 @@
+.blogGridContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1em;
+}
+.cardsWrap{
+    display: grid;
+    grid-template-columns: 25% 25% 25% ;
+    justify-content: center;
+}
+.titleWrap{
+    width: 100%;
+    padding-left: 12em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+}
+.yearTitle{
+    font-family: "AvenirNext-Bold";
+}
