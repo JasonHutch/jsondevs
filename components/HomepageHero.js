@@ -7,84 +7,27 @@ export default function HomepageHero({hero}){
     const {title, heroDescription, backgroundImage} = hero.fields
     return(
         <div className="hero-image">
-            <img className="image" src={'https:' + backgroundImage.fields.file.url}/>
             <div className="hero-text">
-                <div className="left">
-                    <h2 className="bold"><strong>Jason</strong></h2>
-                    <h2>Hutchinson</h2>
-                </div>
-                <div className="right">
-                    <p>Dallas based web developer with a focus in React, CMS, and Search Engine Optimization</p>
-
-                </div>
+                <p>Dallas based web developer with a focus in React, CMS, and product development</p>
             </div>
-            
             <style jsx>{`
-                h1,h2{
-                    font-family: "Proxima-Nova";
-                    text-transform: uppercase;
-                    font-size: 72px;
-                }
-
-                h2.bold{
-                    font-family: "Proxima-Nova-Bold";
-                    text-transform: uppercase;
-                    font-size: 72px;
-                }
-
                 p{
-                    font-family: "AvenirNext";
+                    font-family: "AvenirNext-Bold";
+                    font-size: 20px;
+                    color: #fff;
                 }
-
-                h2.thin{
-                    font-family: "Proxima-Nova-Thin";
-                    text-transform: uppercase;
-                }
-
                 .hero-image {
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    position: relative;
-                    background: black;
-                }
-                
-                .hero-text {
-                    text-align: left;
-                    position: absolute;
-                    top: 54%;
-                    left: 40%;
-                    transform: translate(-50%, -50%);
-                    color: black;
-                    display: flex;
-                    align-items: center
-                }
-
-                .image{
-                    background: black;
-                    object-fit: cover;
-                    width: -webkit-fill-available;
-                    opacity: 0.5;
-                }
-
-                .left{
-                    font-family: "Proxima-Nova";
-                    border-right: 1px solid white;
-                    padding: 20px 50px 60px 150px;
-                    font-size: 1em;
-                    color: white;
-                    font-family: 'Roboto';
-                    line-height: .5em;
-                }
-
-                .right{
-                    font-family: "Proxima-Nova";
-                    display: flex;
-                    justify-content: start;
+                    display:flex;
+                    justify-content: center;
                     align-items: center;
-                    width: 725px;
-                    color:white;
-                    padding-left:30px;
+                    width: 100%;
+                    height: 400px;
+                    background: #14274E;
+                    margin-bottom: 2em;
+                }
+                .hero-text{
+                    width: 500px;
+                    text-align: center;
                 }
             `}</style>
         </div>

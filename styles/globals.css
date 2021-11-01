@@ -1,23 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
 body {
   background: #fff;
   margin: 0;
   font-family: 'Roboto';
   font-size: 1.5em;  
+  overflow: hidden;
 }
 .layout {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  max-width: 100% !important;
+  overflow-x:unset;
+  
 }
 header {
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 60px 0;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  background-color: #14274E;
+  padding: .5em 2em .5em 1em;
 }
 header a {
   text-decoration: none;
@@ -31,6 +38,13 @@ header h1, header h2 {
 header span {
   display: block;
   line-height: 0em;
+  font-family: 'Proxima-Nova-Thin';
+}
+span.siteTitle{
+  display: inline-flex;
+}
+span.site-title-bold{
+  font-family: 'Proxima-Nova-Bold';
 }
 header h2 {
   font-size: 1em;
@@ -46,22 +60,34 @@ footer {
 .page-content {
   width: 100%;
   box-sizing: border-box;
+
 }
 .navLink {
-  color: #bbb;
+  font-family: 'Proxima-Nova-Bold';
+  color: rgba(255, 255, 255, 0.3);
   font-size: small;
   margin: 20px;
 }
-.navLin, .active{
-  color: #14274E;
+.navLink.active{
+  color: #fff;
   font-size: small;
   margin: 20px;
 }
 .navLink:hover{
-  color: #14274E;
+  color: #fff;
 }
 
 .siteTitle{
-  color: #14274E;
+  color: #fff;
+}
+.sectionTitle{
+  font-family: 'Proxima-Nova-Bold';
+  margin-bottom: 1.3em;
+  font-size: 1.70em;
+}
+.aboutMe{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
 

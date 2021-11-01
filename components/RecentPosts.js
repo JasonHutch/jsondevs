@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/RecipeCard.module.css'
 
 
-export default function RecipieCard({post}){
+export default function RecentPost({post}){
     const {title, slug, description, thumbnail} = post.fields
     return(
         <div className={styles.card}>

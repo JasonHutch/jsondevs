@@ -1,5 +1,27 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .recipeList{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px 60px;
+}
+.cardWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sectionHeading{
+    margin: 50px;
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+}
+.aboutMe{
+    display: flex;
+    justify-content: center;
 }
