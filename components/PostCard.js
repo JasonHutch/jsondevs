@@ -4,7 +4,7 @@ import styles from '../styles/RecipeCard.module.css'
 
 
 export default function PostCard({post}){
-    const {title, slug, description, thumbnail} = post.fields
+    const {title, slug, description, thumbnail, tags} = post.fields
     return(
         <div className={styles.card}>
             <div className="featured">
@@ -13,8 +13,18 @@ export default function PostCard({post}){
             </div>
             <div className={styles.content}>
                 <div className={styles.info}>
-                    <p className={styles.tag}>React</p>
-                    <h4 className={styles.cardTitle}>{title}</h4>
+                    <p className="tag">{tags && tags.length > 0 ? tags[0].fields.name : "Development"}</p>
+                    <style jsx>{`
+                        .tag{
+                            color:${tags && tags.length > 0 ? tags[0].fields.color : "blue"};
+                            font-family: 'AvenirNext-Bold';
+                            margin: 0;
+                            font-size: 15px;
+                        }
+                    `}</style>
+                    <Link href={"/development/" + slug}>
+                        <h4 className={styles.cardTitle}>{title}</h4>
+                    </Link>
                     <p className={styles.cardDescription}>{description}</p>
                 </div>
             </div>

@@ -55,12 +55,12 @@ export default function Layout({ children }) {
                 <span className={tab == 'dev' ? 'navLink active' : 'navLink'}><strong>DEVELOPMENT</strong></span>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/gaming">
               <a onClick={()=>setTab('gaming')}>
                 <span className={tab == 'gaming' ? 'navLink active' : 'navLink'}><strong>GAMING</strong></span>
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/about">
               <a onClick={()=>setTab('about')}>
                 <span className={tab == 'about' ? 'navLink active' : 'navLink'}><strong>ABOUT</strong></span>
               </a>

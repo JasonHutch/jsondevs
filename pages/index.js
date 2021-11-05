@@ -31,7 +31,7 @@ export default function Render ({hero, posts, author}) {
         <div className={styles.cardWrap}>
           <h2 class="sectionTitle">Recent</h2>
           <div className={styles.cards}>
-            {posts.map((post)=>{
+            {posts.slice(0,3).map((post)=>{
               return <PostCard post={post}/>
             })}
           </div>

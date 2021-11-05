@@ -8,7 +8,7 @@ export default function DetailHero ({hero}) {
       return (
         <div className={styles.detailHeroWrap}>
           <Image src={'https:' + heroImage.fields.file.url} layout="fill"/>
-          <div className={styles.centered}>DEVELOPMENT</div>
+          <div className={styles.centered}>{title}</div>
           <div className={styles.overlay}></div>
         </div>
       )

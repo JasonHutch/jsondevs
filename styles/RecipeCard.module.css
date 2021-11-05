@@ -23,14 +23,17 @@
   .featuredImage{
     border-radius: 20px;
   }
-  .tag{
-    font-family: 'AvenirNext';
-    color: blue ;
-    margin: 0;
-    font-size: 15px;
+  h4.cardTitle{
+    font-family: 'Proxima-Nova-Bold';
+    cursor: pointer;
   }
   h4.cardTitle{
     font-family: 'Proxima-Nova-Bold';
+    cursor: pointer;
+    color: #14274E;
+  }
+  h4.cardTitle:hover{
+    color: #A6A6A6;
   }
   p.cardDescription{
     font-size: 20px;

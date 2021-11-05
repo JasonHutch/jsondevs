@@ -1,0 +1,46 @@
+.banner{
+    position: relative;
+    height: 461px;
+    text-align: center;
+    color: white;
+}
+.bioHeading{
+    font-family: "Proxima-Nova-Bold";
+
+}
+.downloadButton{
+    font-family: "AvenirNext";
+    cursor: pointer;
+    margin-bottom: .2em;
+    font-size: 15px;
+    border: 2px solid #14274E;
+    border-radius: 20px;
+    padding: 1em;
+    color: #14274E;
+}
+.downloadButton:hover{
+    font-family: "AvenirNext";
+    margin-bottom: .2em;
+    font-size: 15px;
+    border: 2px solid #14274E;
+    border-radius: 20px;
+    padding: 1em;
+    color: #fff;
+    background-color: #14274E;
+}
+.titleWrap{
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: space-between;
+}
+.bodyWrap{
+    margin-left: 20%;
+    margin-right: 20%;
+    font-family: "AvenirNext";
+    font-size: 18px;
+    letter-spacing: normal;
+    line-height: 2;
+}

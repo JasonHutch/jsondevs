@@ -1,0 +1,48 @@
+info.h3 {
+    text-transform: uppercase;
+}
+.banner{
+    position: relative;
+    min-height: 400px;
+    text-align: center;
+    color: white;
+}
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1em;
+    margin-left: 25%;
+    margin-right: 20%;
+}
+.detailPageHeader{
+
+}
+.detailPageBody{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: auto;
+}
+.articleTitle{
+    font-family: "Proxima-Nova-Bold";
+    color: #14274E;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.topicTag{
+    
+}
+.dateString{
+    font-family: "Proxima-Nova-Bold";
+    font-size: 20px;
+    color: #A6A6A6;
+    margin-bottom: 2em;
+}
+.bodyText{
+    font-family: "AvenirNext";
+    font-size: 18px;
+    letter-spacing: normal;
+    line-height: 2;
+}

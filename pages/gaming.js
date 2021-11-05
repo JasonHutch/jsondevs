@@ -1,11 +1,9 @@
 import {createClient} from 'contentful';
 import { urlObjectKeys } from 'next/dist/next-server/lib/utils';
-import { getFontDefinitionFromNetwork } from 'next/dist/next-server/server/font-utils';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import BlogGrid from '../components/BlogGrid';
 import DetailHero from '../components/DetailHero';
-import PostCard from '../components/PostCard';
 import TopicFilter from '../components/TopicFilter';
 import TopicFilters from '../components/TopicFilter';
 import styles from '../styles/DetailPage.module.css';
@@ -17,9 +15,9 @@ export async function getStaticProps(){
     accessToken: "ahvnRSE51IUHWn2eEYmaSqxDDC18ombe2r7UXOgrpJk"
   })
 
-  const posts = await client.getEntries({ content_type: 'blogPost', 'fields.type':'Development', order: '-fields.publishDate'})
-  const hero = await client.getEntries({ content_type: 'detailHero', 'fields.pageTitle':'Development'})
-  const tags = await client.getEntries({content_type:'tag', 'fields.type':'Development'})
+  const posts = await client.getEntries({ content_type: 'blogPost', 'fields.type':'Gaming', order: '-fields.publishDate'})
+  const hero = await client.getEntries({ content_type: 'detailHero'})
+  const tags = await client.getEntries({content_type:'tag', 'fields.type':'Gaming'})
 
   return {
     props:{
@@ -32,8 +30,10 @@ export async function getStaticProps(){
 
 
 
-export default function DevelopPage ({hero, posts, tags}) {
+export default function GamingPage ({hero, posts, tags}) {
   var [activeTopics, setActiveTopics] = useState([]);
+
+
 
   function updateTopicFilters(topicName){
     var array = activeTopics;
@@ -57,19 +57,19 @@ export default function DevelopPage ({hero, posts, tags}) {
 }
 
 function getBlogTags(posts){
-  var tags = [];
-  posts.forEach((post)=>{
-    var postTagName = post.fields.tags[0].fields.name;
-    if(tags.indexOf(postTagName) == -1){
-      tags.push(postTagName);
-    }
-  })
-  return tags;
-}
-
-function hasActiveTag(blog){
-  return activeTopics.includes(blog.fields.tags[0].fields.name);
-}
+    var tags = [];
+    posts.forEach((post)=>{
+      var postTagName = post.fields.tags[0].fields.name;
+      if(tags.indexOf(postTagName) == -1){
+        tags.push(postTagName);
+      }
+    })
+    return tags;
+  }
+  
+  function hasActiveTag(blog){
+    return activeTopics.includes(blog.fields.tags[0].fields.name);
+  }
 
   function groupBlogsByDate(blogs){
     var groupedPosts = new Map();
@@ -87,8 +87,9 @@ function hasActiveTag(blog){
     });
     return groupedPosts;
   }
+
   var blogTags = getBlogTags(posts);
-  var groupedBlogs = groupBlogsByDate(getFilteredPosts(posts));
+  var groupedBlogs = groupBlogsByDate(posts);
   var keyArray = [...groupedBlogs.keys()];
 
     return (
