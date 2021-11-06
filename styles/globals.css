@@ -24,7 +24,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #14274E;
-  padding: .5em 2em .5em 1em;
+  padding: .5em 1em .5em 1em;
 }
 header a {
   text-decoration: none;
@@ -77,6 +77,11 @@ footer {
   color: #fff;
 }
 
+
+.linkWrap{
+  margin-bottom: 1em;
+}
+
 .siteTitle{
   color: #fff;
 }
@@ -89,5 +94,51 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: 100px;
+}
+
+.hamburgerWrap{
+  display: none;
+}
+.mobileMainNav{
+  display: none;
+}
+
+@media (max-width: 768px){
+  .mobileMainNav .navLink {
+    font-family: 'Proxima-Nova-Bold';
+    font-size: 1em;
+  }
+  .mobileMainNav .navLink .active{
+    font-size: 1em;
+    
+  }
+  .mobileMainNav .navLink:hover{
+    color: #fff;
+  }
+  .hamburgerWrap{
+    display: block;
+    margin-left: 1vw;
+  }
+  .closeWrap{
+    display: block;
+    margin-left: 1vw;
+  }
+  .mainNav{
+    display: flex;
+    flex-direction: column;
+    display: none;
+  }
+  .mobileMainNav{
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: #14274E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 73px;
+  }
 }
 

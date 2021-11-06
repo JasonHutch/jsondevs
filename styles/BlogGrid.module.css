@@ -10,6 +10,7 @@
     grid-template-columns: 25% 25% 25% ;
     justify-content: center;
 }
+
 .titleWrap{
     width: 100%;
     padding-left: 12em;
@@ -20,4 +21,21 @@
 }
 .yearTitle{
     font-family: "AvenirNext-Bold";
+}
+@media (max-width: 768px){
+    .cardsWrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .titleWrap{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0px;
+        
+    }
 }

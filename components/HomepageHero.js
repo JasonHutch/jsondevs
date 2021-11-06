@@ -21,13 +21,18 @@ export default function HomepageHero({hero}){
                     justify-content: center;
                     align-items: center;
                     width: 100%;
-                    height: 400px;
+                    height: 20vw;
                     background: #14274E;
                     margin-bottom: 2em;
                 }
                 .hero-text{
                     width: 500px;
                     text-align: center;
+                }
+                @media (max-width: 768px){
+                    .hero-text{
+                        display: none;
+                    }
                 }
             `}</style>
         </div>

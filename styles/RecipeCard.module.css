@@ -1,8 +1,15 @@
 .card {
-    width: 400px;
-    margin-left: 50px;
-    margin-top: 50px;
+    width: 22vw;
+    margin-right: 2vw;
+    margin-left: 2vw;
   }
+  @media (max-width: 768px){
+    .card{
+      width: 70vw;
+      margin-left: 0px;
+      margin-top: 0px;
+    }
+}
   .info {
     padding: 16px;
   }
@@ -26,6 +33,7 @@
   h4.cardTitle{
     font-family: 'Proxima-Nova-Bold';
     cursor: pointer;
+    font-size: 1em;
   }
   h4.cardTitle{
     font-family: 'Proxima-Nova-Bold';

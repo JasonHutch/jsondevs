@@ -2,13 +2,36 @@ import Link from 'next/link'
 import Image from 'next/image';
 import {createClient} from 'contentful';
 import { useEffect, useState } from 'react';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import {GiHamburgerMenu} from 'react-icons/gi';
+import {AiOutlineClose} from 'react-icons/ai';
 import Head from 'next/head'
 
 export default function Layout({ children }) {
   let [data, setData] = useState(null);
   let [loading, setLoading] = useState(true);
   let [tab, setTab] = useState("home");
+  let [menuOpen, setMenuOpen] = useState(false);
+
+  function getModalStyles(){
+    if(menuOpen){
+      return {"display":"flex"}
+    }else{
+      return {"display":"none"}
+  }
+}
+
+function handleModalOpen(){
+  setMenuOpen(true);
+}
+
+function handleModalClose(){
+  setMenuOpen(false);
+}
+function navigate(link){
+  setTab(link);
+  handleModalClose()
+}
 
    useEffect(() =>{
     const fetchData = async () => {
@@ -66,7 +89,41 @@ export default function Layout({ children }) {
               </a>
             </Link>
           </div>
+          {menuOpen ? (
+            <div className="closeWrap" onClick={()=>{handleModalClose()}}>
+              <AiOutlineClose color={'#fff'}/>
+            </div>
+            ):
+            (
+              <div className="hamburgerWrap" onClick={()=>{handleModalOpen()}}>
+                <GiHamburgerMenu color={'#fff'}/>
+              </div>
+            )}
+          
+          
       </header>
+      <div className="mobileMainNav" style={getModalStyles()}>
+            <Link href="/">
+              <a onClick={()=>navigate('home')} className="linkWrap">
+                <span className={tab == 'home' ? 'navLink active' : 'navLink'}><strong>HOME</strong></span>
+              </a>
+            </Link>
+            <Link href="/development">
+              <a onClick={()=>navigate('dev')} className="linkWrap">
+                <span className={tab == 'dev' ? 'navLink active' : 'navLink'}><strong>DEVELOPMENT</strong></span>
+              </a>
+            </Link>
+            <Link href="/gaming">
+              <a onClick={()=>navigate('gaming')} className="linkWrap">
+                <span className={tab == 'gaming' ? 'navLink active' : 'navLink'}><strong>GAMING</strong></span>
+              </a>
+            </Link>
+            <Link href="/about">
+              <a onClick={()=>navigate('about')}>
+                <span className={tab == 'about' ? 'navLink active' : 'navLink'}><strong>ABOUT</strong></span>
+              </a>
+            </Link>
+          </div>
 
       <div className="page-content">
         { children }
