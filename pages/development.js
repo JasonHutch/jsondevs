@@ -101,7 +101,7 @@ function hasActiveTag(blog){
         </div>
         <div className={styles.blogsContainer}>
           {keyArray.map((key)=>(
-            <BlogGrid year={key} blogs={groupedBlogs.get(key)} page="development"/>
+            <BlogGrid year={key} blogs={groupedBlogs.get(key)}/>
           ))}
         </div>
       </div>

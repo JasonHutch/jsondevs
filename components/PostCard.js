@@ -3,8 +3,8 @@ import Image from 'next/image'
 import styles from '../styles/RecipeCard.module.css'
 
 
-export default function PostCard({post, pageSlug}){
-    const {title, slug, description, thumbnail, tags} = post.fields
+export default function PostCard({post}){
+    const {title, slug, description, thumbnail, tags, type} = post.fields
     return(
         <div className={styles.card}>
             <div className="featured">
@@ -22,7 +22,7 @@ export default function PostCard({post, pageSlug}){
                             font-size: 15px;
                         }
                     `}</style>
-                    <Link href={"/"+ pageSlug +"/" + slug}>
+                    <Link href={"/"+ type.toLowerCase() +"/" + slug}>
                         <h4 className={styles.cardTitle}>{title}</h4>
                     </Link>
                     <p className={styles.cardDescription}>{description}</p>

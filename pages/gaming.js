@@ -22,7 +22,7 @@ export async function getStaticProps(){
   return {
     props:{
       posts: posts.items,
-      hero: hero.items[0],
+      hero: hero.items[1],
       tags: tags.items
     }
   }
@@ -102,7 +102,7 @@ function getBlogTags(posts){
         </div>
         <div className={styles.blogsContainer}>
           {keyArray.map((key)=>(
-            <BlogGrid year={key} blogs={groupedBlogs.get(key)} page={"gaming"}/>
+            <BlogGrid year={key} blogs={groupedBlogs.get(key)}/>
           ))}
         </div>
       </div>
