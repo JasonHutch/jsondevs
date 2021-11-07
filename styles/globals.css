@@ -133,8 +133,6 @@ footer {
     top: 10px;
   }
   .mainNav{
-    display: flex;
-    flex-direction: column;
     display: none;
   }
   .mobileMainNav{
