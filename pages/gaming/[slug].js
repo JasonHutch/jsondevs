@@ -1,11 +1,11 @@
 import {createClient} from 'contentful';
 import Image from 'next/image';
-import styles from '../../styles/RecipeDetail.module.css'
+import styles from '../../styles/ArticleDetail.module.css'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_KEY
+  space: "3s3fdhgc7v0b",
+  accessToken: "ahvnRSE51IUHWn2eEYmaSqxDDC18ombe2r7UXOgrpJk"
 })
 
 //These remind me of lifecylce methods, seems to be apart of next js. get static paths, gets all recipes and then teturns a params object that contains slug for each
@@ -39,15 +39,38 @@ export async function getStaticProps({ params }){
 
 
 export default function RecipeDetails({blogs}) {
-  const {featuredImage, title, body } = blogs.fields;
+  const {featuredImage, title, body, publishDate, tags } = blogs.fields;
+
+  var date = new Date(publishDate);
+  var dateString = date.toLocaleString('en-US',{
+    weekday:'long',
+    month: 'short',
+    day:'numeric',
+    year: 'numeric'
+  })
+
+  console.log(tags);
+  
   return (
     <div>
       <div className={styles.banner}>
-          <Image src={'https:' + featuredImage.fields.file.url} width={featuredImage.fields.file.details.image.width} height={featuredImage.fields.file.details.image.height}/>
+          <Image src={'https:' + featuredImage.fields.file.url} layout="fill"/>
       </div>
-      <div className={styles.method}>
-        <h3>{documentToReactComponents(body)}</h3>
-        
+      <div className={styles.body}>
+        <div className={styles.detailPageHeader}>
+          <p className="topicTag">{tags && tags.length > 0 ? tags[0].fields.name : "Gaming"}</p>
+          <style jsx>{`
+               .topicTag{
+                 color:${tags && tags.length > 0 ? tags[0].fields.color : "blue"};
+                 font-family: "Proxima-Nova-Bold";
+                 font-size: 20px;
+                 margin: 0px;
+               }
+            `}</style>
+          <h1 className={styles.articleTitle}>{title}</h1>
+          <p className={styles.dateString}>{dateString}</p>
+          <p className={styles.bodyText}>{documentToReactComponents(body)}</p>
+        </div>
       </div>
     </div>
   )

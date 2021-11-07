@@ -4,7 +4,7 @@ import styles from '../styles/BlogGrid.module.css'
 import PostCard from './PostCard'
 
 
-export default function BlogGrid({year, blogs}){
+export default function BlogGrid({year, blogs, page}){
     return(
         <div className={styles.blogGridContainer}>
             <div className={styles.titleWrap}>
@@ -12,7 +12,7 @@ export default function BlogGrid({year, blogs}){
             </div>
             <div className={styles.cardsWrap}>
                 {blogs.map((blog)=>(
-                    <PostCard post={blog}/>
+                    <PostCard post={blog} pageSlug={page}/>
                 ))}
             </div>
         </div>

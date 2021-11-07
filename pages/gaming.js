@@ -102,7 +102,7 @@ function getBlogTags(posts){
         </div>
         <div className={styles.blogsContainer}>
           {keyArray.map((key)=>(
-            <BlogGrid year={key} blogs={groupedBlogs.get(key)}/>
+            <BlogGrid year={key} blogs={groupedBlogs.get(key)} page={"gaming"}/>
           ))}
         </div>
       </div>
