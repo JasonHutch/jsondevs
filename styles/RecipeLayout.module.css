@@ -26,6 +26,9 @@
         flex-direction: column;
         width: 100%;
     }
+    .cardWrap{
+      margin-top: 8vw;
+    }
 }
 .aboutMe{
     display: flex;

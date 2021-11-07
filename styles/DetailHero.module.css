@@ -8,11 +8,11 @@
     font-family: 'Proxima-Nova-Bold';
     text-transform: uppercase;
     position: absolute;
-    font-size: 2em;
+    font-size: 3vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
   }
   .overlay {
     position: absolute;
@@ -23,6 +23,20 @@
     right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-    z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
+  }
+  .detailHeroImageWrap {
+    width: 100%;
+  }
+  .detailHeroImage {
+    object-fit: contain;
+    width: 100% !important;
+    position: relative !important;
+    height: unset !important;
+  }
+  @media (max-width: 768px){
+    .centered {
+      font-size: 7vw;
+    }
   }

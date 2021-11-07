@@ -6,7 +6,6 @@
 }
 .bioHeading{
     font-family: "Proxima-Nova-Bold";
-
 }
 .downloadButton{
     font-family: "AvenirNext";
@@ -43,4 +42,18 @@
     font-size: 18px;
     letter-spacing: normal;
     line-height: 2;
+}
+
+@media (max-width: 768px){
+    .titleWrap{
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10vw;
+        margin-left: 0px;
+    }
+    .bioHeading{
+        font-size: 10vw;
+    }
+    
 }
