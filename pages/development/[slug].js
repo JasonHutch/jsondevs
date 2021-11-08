@@ -54,7 +54,7 @@ export default function RecipeDetails({blogs}) {
   return (
     <div>
       <div className={styles.banner}>
-          <Image src={'https:' + featuredImage.fields.file.url} layout="fill"/>
+          <Image className={styles} src={'https:' + featuredImage.fields.file.url} layout="fill" objectFit="cover"/>
       </div>
       <div className={styles.body}>
         <div className={styles.detailPageHeader}>

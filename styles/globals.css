@@ -83,6 +83,7 @@ footer {
 
 .linkWrap{
   margin-bottom: 1em;
+  text-decoration: none;
 }
 
 .siteTitle{
@@ -145,7 +146,7 @@ footer {
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 53px;
+    top: 52px;
   }
 }
 

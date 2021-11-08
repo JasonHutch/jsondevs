@@ -119,7 +119,7 @@ function navigate(link){
               </a>
             </Link>
             <Link href="/about">
-              <a onClick={()=>navigate('about')}>
+              <a onClick={()=>navigate('about')} className="linkWrap">
                 <span className={tab == 'about' ? 'navLink active' : 'navLink'}><strong>ABOUT</strong></span>
               </a>
             </Link>
