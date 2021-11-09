@@ -30,7 +30,7 @@
   .detailHeroImageWrap {
     position: relative;
     width: 100vw;
-    height: 81.66vh;
+    height: 400px;
   }
   .detailHeroImage {
     object-fit: contain;
