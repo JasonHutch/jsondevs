@@ -28,7 +28,9 @@
     cursor: pointer; /* Add a pointer on hover */
   }
   .detailHeroImageWrap {
-    width: 100%;
+    position: relative;
+    width: 100vw;
+    height: 81.66vh;
   }
   .detailHeroImage {
     object-fit: contain;

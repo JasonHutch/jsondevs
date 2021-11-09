@@ -16,9 +16,6 @@ info.h3 {
     margin-left: 25%;
     margin-right: 20%;
 }
-.detailPageHeader{
-
-}
 .detailPageBody{
     display: flex;
     justify-content: flex-start;
@@ -31,9 +28,6 @@ info.h3 {
     margin-top: 5px;
     margin-bottom: 5px;
 }
-.topicTag{
-    
-}
 .dateString{
     font-family: "Proxima-Nova-Bold";
     font-size: 20px;
@@ -45,4 +39,10 @@ info.h3 {
     font-size: 18px;
     letter-spacing: normal;
     line-height: 2;
+}
+@media (max-width: 768px){
+    .body{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }

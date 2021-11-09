@@ -9,7 +9,9 @@ export default function PostCard({post}){
         <div className={styles.card}>
             <div className="featured">
                 {/*Automatically optimizes image -- lazy loading -- Must whitelist domain in next config, and specify height and width which can be found on the image item itself*/ }
-                <Image className={styles.featuredImage} src={'https:' + thumbnail.fields.file.url} width={thumbnail.fields.file.details.image.width} height={thumbnail.fields.file.details.image.height}/>
+                <Link href={"/"+ type.toLowerCase() +"/" + slug}>
+                    <Image className={styles.featuredImage} src={'https:' + thumbnail.fields.file.url} width={thumbnail.fields.file.details.image.width} height={thumbnail.fields.file.details.image.height}/>
+                </Link>
             </div>
             <div className={styles.content}>
                 <div className={styles.info}>
