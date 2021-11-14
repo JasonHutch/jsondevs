@@ -22,7 +22,7 @@ export default function HomepageHero({hero}){
     return(
         <div className="hero-image-wrap">
             <div>
-                <Image src={'https:' + backgroundImage.fields.file.url} width={imgWidth} height={102}/>
+                <Image src={'https:' + backgroundImage.fields.file.url} width={247} height={102}/>
             </div>
             <div className="hero-text">
                 <p>Dallas based web developer with a focus in React, CMS, and product development</p>
@@ -32,7 +32,7 @@ export default function HomepageHero({hero}){
                     font-family: "AvenirNext-Bold";
                     font-size: 20px;
                     color: #fff;
-                    font-size: 1vw;
+                    font-size: 1.5vw;
                 }
                 .hero-image-wrap {
                     display:flex;
@@ -40,7 +40,7 @@ export default function HomepageHero({hero}){
                     justify-content: center;
                     align-items: center;
                     width: 100%;
-                    height: 20vw;
+                    height: 51vh;
                     background: #14274E;
                     margin-bottom: 2em;
                     margin-top: 2vw;
@@ -50,8 +50,11 @@ export default function HomepageHero({hero}){
                     text-align: center;
                 }
                 @media (max-width: 768px){
-                    .hero-image-wrap{
-                        display:none
+                    p{
+                        font-size: 2.5vw;
+                    }
+                    .hero-text{
+                        width: 300px;
                     }
                 }
             `}</style>

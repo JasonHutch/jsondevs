@@ -36,18 +36,9 @@
 }
 .homepageCardsWrap{
     display: flex;
-    justify-content: center;
-    margin: 20px 0px;
-}
-@media (max-width: 768px){
-    .cards{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
-    .cardWrap{
-      margin-top: 8vw;
-    }
+    flex-direction: column;
+    align-items: stretch;
+    margin: -10px 0px;
 }
 .aboutMe{
     display: flex;
@@ -61,11 +52,44 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
-
 .cardsList::-webkit-scrollbar {
     display: none;
   }
 
-  .twitterWrapper{
-      margin-top: 45px;
-  }
+.twitterWrapper{
+    margin-top: 120px;
+}
+@media (max-width: 1024px){
+    .main{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .rail{
+        display: none;
+    }
+    .titleWrap{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
+@media (max-width: 768px){
+    .cards{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .cardWrap{
+      margin-top: 8vw;
+    }
+    .homepageCardsWrap{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    .cardsList{
+        margin-top: 5px;
+        width: 34%;
+    }
+}

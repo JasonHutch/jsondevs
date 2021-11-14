@@ -82,7 +82,6 @@ footer {
   color: #fff;
 }
 
-
 .linkWrap{
   margin-bottom: 1em;
   text-decoration: none;
@@ -108,7 +107,11 @@ footer {
 .mobileMainNav{
   display: none;
 }
-
+@media (max-width: 1024px){
+  .main{
+    width: 100%;
+  }
+}
 @media (max-width: 768px){
   .mobileMainNav .navLink {
     font-family: 'Proxima-Nova-Bold';

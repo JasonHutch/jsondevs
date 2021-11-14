@@ -33,12 +33,15 @@ export default function Render ({hero, posts, author}) {
   return (
     <div className={styles.container}>
       <HomepageHero hero={hero} />
-      <div className={styles.homepageCardsWrap}> 
-      <ul className={styles.cardsList}>
-        <li><HomepageCard/></li>
-        <li><HomepageCard/></li>
-        <li><HomepageCard/></li>
-      </ul>
+      <div className={styles.homepageCardsWrap}>
+        <div className={styles.titleWrap}>
+          <h2 class="sectionTitle">Home</h2>
+        </div>
+        <ul className={styles.cardsList}>
+          <li><HomepageCard/></li>
+          <li><HomepageCard/></li>
+          <li><HomepageCard/></li>
+        </ul>
       </div>
       <div className={styles.contentWrap}>
         <div className="main">
