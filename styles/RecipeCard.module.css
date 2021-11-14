@@ -1,7 +1,6 @@
 .card {
     width: 22vw;
-    margin-right: 2vw;
-    margin-left: 2vw;
+    margin-right: 3vw;
   }
   @media (max-width: 768px){
     .card{

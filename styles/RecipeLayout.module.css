@@ -4,6 +4,11 @@
     align-items: center;
     justify-content: center;
 }
+.contentWrap{
+    display: flex;
+    flex-direction: row;
+
+}
 .cardWrap{
     display: flex;
     flex-direction: column;
@@ -17,8 +22,22 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin-right: 20%;
-    margin-left: 20%;
+}
+.rail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.titleWrap{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+}
+.homepageCardsWrap{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
 }
 @media (max-width: 768px){
     .cards{
@@ -34,3 +53,19 @@
     display: flex;
     justify-content: center;
 }
+.cardsList{
+    display: flex;
+    width: 95%;
+    list-style: none;
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.cardsList::-webkit-scrollbar {
+    display: none;
+  }
+
+  .twitterWrapper{
+      margin-top: 45px;
+  }

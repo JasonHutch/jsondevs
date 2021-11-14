@@ -33,7 +33,7 @@ export default function About ({author}) {
     return (
       <div className={styles.aboutPageContainer}>
         <div className={styles.banner}>
-          <Image src={'https:' + authorImage.fields.file.url} layout="fill"/>
+          <Image src={'https:' + authorImage.fields.file.url} layout="fill" objectFit="cover"/>
         </div>
         <div className={styles.titleWrap}>
             <h1 className={styles.bioHeading}>A little about me</h1>
