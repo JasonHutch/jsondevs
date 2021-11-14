@@ -34,9 +34,6 @@ export default function Render ({hero, posts, author}) {
     <div className={styles.container}>
       <HomepageHero hero={hero} />
       <div className={styles.homepageCardsWrap}>
-        <div className={styles.titleWrap}>
-          <h2 class="sectionTitle">Home</h2>
-        </div>
         <ul className={styles.cardsList}>
           <li><HomepageCard/></li>
           <li><HomepageCard/></li>
@@ -70,7 +67,7 @@ export default function Render ({hero, posts, author}) {
         </div>
         <div className={styles.rail}>
                 <div className={styles.twitterWrapper}>
-                <a class="twitter-timeline" data-width="300" data-height="600" href="https://twitter.com/Hutch_ii?ref_src=twsrc%5Etfw">Tweets by Hutch_ii</a> 
+                <a class="twitter-timeline" data-width="300" data-height="800" href="https://twitter.com/Hutch_ii?ref_src=twsrc%5Etfw">Tweets by Hutch_ii</a> 
                 </div>
         </div>
       </div>

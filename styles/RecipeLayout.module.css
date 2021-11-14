@@ -46,11 +46,12 @@
 }
 .cardsList{
     display: flex;
-    width: 95%;
+    width: 100%;
     list-style: none;
     overflow-x: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+    padding-left: 0px;
 }
 .cardsList::-webkit-scrollbar {
     display: none;

@@ -32,7 +32,7 @@ export default function HomepageHero({hero}){
                     font-family: "AvenirNext-Bold";
                     font-size: 20px;
                     color: #fff;
-                    font-size: 1.5vw;
+                    font-size: 100%;
                 }
                 .hero-image-wrap {
                     display:flex;
@@ -43,7 +43,7 @@ export default function HomepageHero({hero}){
                     height: 51vh;
                     background: #14274E;
                     margin-bottom: 2em;
-                    margin-top: 2vw;
+                    margin-top: 50px;
                 }
                 .hero-text{
                     width: 500px;
