@@ -17,6 +17,7 @@ export async function getStaticProps(){
   const posts = await client.getEntries({ content_type: 'blogPost'})
   const hero = await client.getEntries({ content_type: 'homepageHero'})
   const authors = await client.getEntries({ content_type: 'author'})
+  const homepageLinks = await client.getEntries({content_type: 'homepageLink'})
 
   
 
@@ -24,20 +25,21 @@ export async function getStaticProps(){
     props:{
       posts: posts.items,
       hero: hero.items[0],
-      author: authors.items[0]
+      author: authors.items[0],
+      homepageLinks: homepageLinks.items
     }
   }
 }
-export default function Render ({hero, posts, author}) {
-
+export default function Render ({hero, posts, author, homepageLinks}) {
+console.log(homepageLinks);
   return (
     <div className={styles.container}>
       <HomepageHero hero={hero} />
       <div className={styles.homepageCardsWrap}>
         <ul className={styles.cardsList}>
-          <li><HomepageCard/></li>
-          <li><HomepageCard/></li>
-          <li><HomepageCard/></li>
+          {homepageLinks && homepageLinks.slice(0,3).map((card)=>{
+            return <li><HomepageCard card={card}/></li>
+          })}
         </ul>
       </div>
       <div className={styles.contentWrap}>
@@ -45,7 +47,7 @@ export default function Render ({hero, posts, author}) {
           <div className={styles.recentPostsWrap}>
             <div className={styles.cardWrap}>
               <div className={styles.titleWrap}>
-                <h2 class="sectionTitle">Recent Development</h2>
+                <h2 class="sectionTitle">Development</h2>
               </div>
               <div className={styles.cards}>
                 {posts.slice(0,3).map((post)=>{
@@ -55,7 +57,7 @@ export default function Render ({hero, posts, author}) {
             </div>
             <div className={styles.cardWrap}>
               <div className={styles.titleWrap}>
-                <h2 class="sectionTitle">Recent Gaming</h2>
+                <h2 class="sectionTitle">Gaming</h2>
               </div>
               <div className={styles.cards}>
                 {posts.slice(0,3).map((post)=>{

@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {AiOutlineClose} from 'react-icons/ai';
-import {GA_TRACKING_ID} from '../lib/gtag'
 import Head from 'next/head'
 
 export default function Layout({ children }) {
@@ -55,21 +54,6 @@ function navigate(link){
     <div className="layout">
       <Head>
         <link rel="stylesheet" href="/fonts/fonts.css" />
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-8BEEMC92X0"
-        />
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '[Tracking ID]', { page_path: window.location.pathname });
-            `,
-          }}
-        />
         <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"/>
         <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css"/>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
